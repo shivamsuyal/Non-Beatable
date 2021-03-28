@@ -224,6 +224,7 @@ while True:
    print('showing result')
    time.sleep(4)
    d1.update(d2)
+   print('\033c')
    printBoard(d1)
    time.sleep(0.9)
    print('    You lost from a brainless machine   hahaha ')
