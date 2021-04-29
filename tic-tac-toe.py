@@ -205,8 +205,7 @@ def play():
 printBoard(theBoard)
 while True:  
  try:
-            raise Playererror
-            #play()
+            play()
               
  except Playererror:
    typeit("The end\n\n\nYOU W",0.2)
