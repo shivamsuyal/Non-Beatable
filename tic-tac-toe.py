@@ -1,5 +1,4 @@
-import time
-import random
+import time,random,sys
 aii=''
 ai1_move=0
 
@@ -44,7 +43,12 @@ def printBoard(board):
  print('      '+'||'+'      '+'|'+'      '+'|'+'      '+'||')
  print('      '+'--------+------+--------')
 
-
+def typeit(mes,t):
+  for i in mes:
+    sys.stdout.write(i)
+    sys.stdout.flush()
+    time.sleep(t)
+  
 def ai1():
   global move,ai1_move
   ai1_move=0
@@ -201,28 +205,21 @@ def play():
 printBoard(theBoard)
 while True:  
  try:
-            play()
+            raise Playererror
+            #play()
               
  except Playererror:
-   print('The end','\n')
-   time.sleep(2)
-   print('Y')
-   time.sleep(2)
-   print('O')
-   time.sleep(2)
-   print('U')
-   time.sleep(2)
-   print('W')
+   typeit("The end\n\n\nYOU W",0.2)
    print('O'*209)
    time.sleep(2)
-   print('Game crashed')
-   time.sleep(3)
-   print('reopening the game')
+   typeit('Game crashed\n',0.1)
+   time.sleep(1)
+   typeit('reopening the game\n',0.1)
+   time.sleep(1)
+   typeit('retriving the data\n',0.1)
+   time.sleep(1)
+   typeit('showing result\n',0.1)
    time.sleep(2)
-   print('retriving the data')
-   time.sleep(2)
-   print('showing result')
-   time.sleep(4)
    d1.update(d2)
    print('\033c')
    printBoard(d1)
